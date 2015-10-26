@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gl.com.frescodemo" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="gl.com.activity.NormalActivity"
+            android:label="@string/title_activity_normal" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.ProgressActivity"
+            android:label="@string/title_activity_progress" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.ZoomActivity"
+            android:label="@string/title_activity_zoom" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.RoundActivity"
+            android:label="@string/title_activity_round" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.ControllerActivity"
+            android:label="@string/title_activity_controller" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.JPEGActivity"
+            android:label="@string/title_activity_jpeg" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.GifActivity"
+            android:label="@string/title_activity_gif" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.MutiImageActivity"
+            android:label="@string/title_activity_muti_image" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.DownImageListenerActivity"
+            android:label="@string/title_activity_down_image_listener" >
+        </activity>
+        <activity
+            android:name="gl.com.activity.RomotaActivity"
+            android:label="@string/title_activity_romota" >
+        </activity>
+    </application>
+
+</manifest>

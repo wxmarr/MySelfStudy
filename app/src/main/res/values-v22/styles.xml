@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:listDivider">@drawable/diver</item>
+        <!--
+            是否开启tranition动画
+        -->
+        <!--<item name="android:windowContentTransitions">true</item>-->
+        <!--&lt;!&ndash;-->
+            <!--activity transition动画-->
+        <!--&ndash;&gt;-->
+        <!--<item name="android:windowEnterTransition">@transition/tran</item>-->
+        <!--<item name="android:windowExitTransition"></item>-->
+        <!--<item name="android:windowReenterTransition"></item>-->
+        <!--<item name="android:windowReturnTransition"></item>-->
+
+        <!--&lt;!&ndash;-->
+            <!--共享元素切换动画-->
+        <!--&ndash;&gt;-->
+        <!--<item name="android:windowSharedElementEnterTransition"></item>-->
+        <!--<item name="android:windowSharedElementExitTransition"></item>-->
+        <!--<item name="android:windowSharedElementReenterTransition"></item>-->
+        <!--<item name="android:windowSharedElementReturnTransition"></item>-->
+    </style>
+    <style name="AppTheme1" parent="android:Theme.Material.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:listDivider">@drawable/diver</item>
+        <!--
+            是否开启tranition动画
+        -->
+        <!--<item name="android:windowContentTransitions">true</item>-->
+        <!--&lt;!&ndash;-->
+        <!--activity transition动画-->
+        <!--&ndash;&gt;-->
+        <!--<item name="android:windowEnterTransition">@transition/tran</item>-->
+        <!--<item name="android:windowExitTransition"></item>-->
+        <!--<item name="android:windowReenterTransition"></item>-->
+        <!--<item name="android:windowReturnTransition"></item>-->
+
+        <!--&lt;!&ndash;-->
+        <!--共享元素切换动画-->
+        <!--&ndash;&gt;-->
+        <!--<item name="android:windowSharedElementEnterTransition"></item>-->
+        <!--<item name="android:windowSharedElementExitTransition"></item>-->
+        <!--<item name="android:windowSharedElementReenterTransition"></item>-->
+        <!--<item name="android:windowSharedElementReturnTransition"></item>-->
+    </style>
+</resources>

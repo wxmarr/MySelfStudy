@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FrescoDemo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_normal">NormalActivity</string>
+    <string name="title_activity_progress">ProgressActivity</string>
+    <string name="action_normal">Fresco自带</string>
+    <string name="action_myself">自定义</string>
+    <string name="title_activity_zoom">ZoomActivity</string>
+    <string name="title_activity_round">RoundActivity</string>
+    <string name="title_activity_controller">ControllerActivity</string>
+    <string name="title_activity_jpeg">JPEGActivity</string>
+    <string name="title_activity_gif">GifActivity</string>
+    <string name="title_activity_muti_image">MutiImageActivity</string>
+    <string name="title_activity_down_image_listener">DownImageListenerActivity</string>
+    <string name="title_activity_romota">RomotaActivity</string>
+</resources>

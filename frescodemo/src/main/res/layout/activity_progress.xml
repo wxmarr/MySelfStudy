@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+
+    tools:context="gl.com.activity.ProgressActivity">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/progress_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+
+        fresco:failureImage="@mipmap/ic_launcher"
+        />
+
+</RelativeLayout>

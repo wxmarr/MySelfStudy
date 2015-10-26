@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+    <explode android:duration="300"
+        android:interpolator="@android:interpolator/accelerate_decelerate"
+        android:matchOrder="0"
+        android:startDelay="100"
+        />
+    <changeBounds
+        />
+    <changeTransform
+        android:reparent="false"
+        android:reparentWithOverlay="false"/>
+    <changeClipBounds
+        />
+    <changeImageTransform
+        />
+    <slide />
+    <fade />
+
+</transitionSet>
+
