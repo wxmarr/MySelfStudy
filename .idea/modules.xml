@@ -4,8 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AS.iml" filepath="$PROJECT_DIR$/AS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/daoexamplegenerator/daoexamplegenerator.iml" filepath="$PROJECT_DIR$/daoexamplegenerator/daoexamplegenerator.iml" />
       <module fileurl="file://$PROJECT_DIR$/frescodemo/frescodemo.iml" filepath="$PROJECT_DIR$/frescodemo/frescodemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greendaodemo/greendaodemo.iml" filepath="$PROJECT_DIR$/greendaodemo/greendaodemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/loaderdemo/loaderdemo.iml" filepath="$PROJECT_DIR$/loaderdemo/loaderdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" filepath="$PROJECT_DIR$/okhttpdemo/okhttpdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/universalimageloaderdemo/universalimageloaderdemo.iml" filepath="$PROJECT_DIR$/universalimageloaderdemo/universalimageloaderdemo.iml" />
     </modules>
   </component>

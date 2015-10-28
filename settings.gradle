@@ -1,1 +1,1 @@
-include ':app', ':frescodemo', ':universalimageloaderdemo', ':loaderdemo'
+include ':app', ':frescodemo', ':universalimageloaderdemo', ':loaderdemo', ':okhttpdemo', ':greendaodemo', ':daoexamplegenerator'
