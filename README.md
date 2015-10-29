@@ -9,3 +9,8 @@ universalimageloaderdemo 为图片缓存框架Universal-Image-Loader的学习
 
 loaderdemo 为loader机制的初步学习了解 
 
+okhttpdemo，啥都没错，只是添加了依赖，看了看okhttp的代码
+
+graeendaoDemo为greendao的初步使用，daoexamplegenerator为对应的java代码
+
+
