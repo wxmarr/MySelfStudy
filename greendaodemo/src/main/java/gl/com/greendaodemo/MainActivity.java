@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dao = initDao();
         initView();
 
-       initColumnsAndData(dao);
+        initColumnsAndData(dao);
 
     }
 
