@@ -11,15 +11,12 @@ import android.graphics.Paint;
  * RGB to gray
  * 转为灰度图
  */
-public class RGBtoGray {
+public class RGBtoGray extends AbsProUtil {
 
-    /**
-     * 方法一 通过滤镜
-     * @param src 原bitmap
-     * @return 返回灰度化后的bitmap
-     */
-    public static Bitmap toGray(Bitmap src){
 
+
+    @Override
+    public Bitmap doPro(Bitmap src) {
         int width,height;
         height = src.getHeight();
         width = src.getWidth();
@@ -34,14 +31,8 @@ public class RGBtoGray {
         return bitmap;
     }
 
-    /**
-     * 方法二  通过YUV的
-     * http://blog.csdn.net/chenamo9651/article/details/886699
-     * @param src
-     * @return
-     */
-    public static Bitmap toGrayByPixs(Bitmap src){
-
+    @Override
+    public Bitmap doProByPix(Bitmap src) {
         int width = src.getWidth();
         int height = src.getHeight();
         //创建像素点数组
@@ -66,5 +57,4 @@ public class RGBtoGray {
 
         return pro;
     }
-
 }
