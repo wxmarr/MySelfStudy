@@ -13,8 +13,11 @@
             <option value="$PROJECT_DIR$/daoexamplegenerator" />
             <option value="$PROJECT_DIR$/frescodemo" />
             <option value="$PROJECT_DIR$/greendaodemo" />
+            <option value="$PROJECT_DIR$/jnidemo" />
+            <option value="$PROJECT_DIR$/jnitext" />
             <option value="$PROJECT_DIR$/loaderdemo" />
             <option value="$PROJECT_DIR$/okhttpdemo" />
+            <option value="$PROJECT_DIR$/pictrueprocess" />
             <option value="$PROJECT_DIR$/universalimageloaderdemo" />
           </set>
         </option>

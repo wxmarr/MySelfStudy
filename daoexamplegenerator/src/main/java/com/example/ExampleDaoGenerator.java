@@ -87,9 +87,9 @@ public class ExampleDaoGenerator {
          * 建立人与订单的一对多关系
          */
 //        Property propertypeoplenum=people.addStringProperty("idcardnum").getProperty();
-        Property property = order.addStringProperty("name1").getProperty();
-        order.addToOne(people, property);
-        people.addToMany(order,propertyname).setName("orders");
+//        Property property = order.addStringProperty("name1").getProperty();
+//        order.addToOne(people, property);
+//        people.addToMany(order,propertyname).setName("orders");
 
         /**
          * 课程
@@ -99,11 +99,11 @@ public class ExampleDaoGenerator {
         course.addStringProperty("coursename").notNull();
 
 
-        Property propertyPeopleId = course.addStringProperty("name").getProperty();
-        course.addToMany(people,propertyPeopleId);
-
-        Property propertyCourseID = people.addStringProperty("courseid").getProperty();
-        people.addToMany(course,propertyCourseID);
+//        Property propertyPeopleId = course.addStringProperty("name").getProperty();
+//        course.addToMany(people,propertyPeopleId);
+//
+//        Property propertyCourseID = people.addStringProperty("courseid").getProperty();
+//        people.addToMany(course,propertyCourseID);
 
     }
 }

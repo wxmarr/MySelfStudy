@@ -13,7 +13,7 @@ import butterknife.OnClick;
  */
 public class BufferknifeDemo extends AppCompatActivity {
 
-    @BindInt(R.id.image)
+
     ImageView image;
 
     @Override
