@@ -15,6 +15,7 @@ import java.sql.Array;
 import java.util.Arrays;
 import java.util.List;
 
+import gl.com.activitys.ProgressActivity;
 import gl.com.adapter.RecyclerViewAdapter;
 import gl.com.utils.PicKinds;
 
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<String> mDatas;
-    private List<Class> mClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +37,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initAdapter() {
-        if (mDatas!=null && mClass!=null){
-            RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,mDatas,mClass);
+        if (mDatas!=null){
+            RecyclerViewAdapter adapter = new RecyclerViewAdapter(this,mDatas);
             if (recyclerView!=null){
                 adapter.setOnClickListener(new RecyclerViewAdapter.OnItemClickListener() {
                     @Override
-                    public void onItemClick(View view, int position, Class clazz) {
-                        Intent intent = new Intent(MainActivity.this,clazz);
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(MainActivity.this, ProgressActivity.class);
+                        intent.putExtra("position",position);
                         startActivity(intent);
                     }
                 });
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         mDatas = Arrays.asList(PicKinds.kinds);
-        mClass = Arrays.asList(PicKinds.classes);
     }
 
     private void initView() {

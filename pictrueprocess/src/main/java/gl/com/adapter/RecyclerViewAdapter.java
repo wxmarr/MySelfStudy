@@ -2,6 +2,7 @@ package gl.com.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext;
     private List<String> mDatas;
-    private List<Class> mClasses;
 
     public interface OnItemClickListener{
-        void onItemClick(View view,int position,Class clazz);
+        void onItemClick(View view,int position);
     }
 
     private OnItemClickListener mListener;
@@ -32,10 +32,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.mListener = listener;
     }
 
-    public RecyclerViewAdapter(Context context,List<String> datas,List<Class> classes){
+    public RecyclerViewAdapter(Context context,List<String> datas){
         this.mContext = context;
         this.mDatas = datas;
-        this.mClasses = classes;
     }
 
     @Override
@@ -54,8 +53,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 @Override
                 public void onClick(View v) {
                     int pos = holder.getLayoutPosition();
-                    Class clazz =mClasses.get(pos);
-                    mListener.onItemClick(holder.textView,pos,clazz);
+                    Log.e("tag",pos+"");
+                    mListener.onItemClick(holder.textView,pos);
                 }
             });
         }
