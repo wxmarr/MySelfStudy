@@ -9,7 +9,7 @@ import android.graphics.Paint;
 /**
  * Created by mac on 15-11-2.
  * RGB to gray
- * 转为灰度图
+ * 转为灰度图 0.3r+0.59g+0.11b
  */
 public class RGBtoGray extends AbsProUtil {
 
@@ -37,14 +37,15 @@ public class RGBtoGray extends AbsProUtil {
         int height = src.getHeight();
         //创建像素点数组
         int[] pixels = new int[width*height];
+        int alpha,grey,red,green,blue;
         src.getPixels(pixels,0,width,0,0,width,height);
-        int alpha = 0xFF<<24;
+        alpha = 0xFF<<24;
         for (int i = 0 ; i < height ; i++){
             for (int j = 0 ; j < width ; j++){
-                int grey  = pixels[width*i+j];
-                int red = ((grey & 0x00FF0000)>>16);
-                int green = ((grey & 0x0000FF00)>>8);
-                int blue = ((grey & 0x000000FF));
+                grey  = pixels[width*i+j];
+                red = ((grey & 0x00FF0000)>>16);
+                green = ((grey & 0x0000FF00)>>8);
+                blue = ((grey & 0x000000FF));
 
                 grey = (int)((float)red*0.3+(float)green*0.59+(float)blue*0.11);
                 grey = alpha | (grey<<16)|(grey<<8)|grey;
