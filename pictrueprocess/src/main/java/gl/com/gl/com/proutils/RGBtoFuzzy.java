@@ -12,6 +12,7 @@ import android.util.Log;
 
 import gl.com.pictrueprocess.MyApplication;
 import gl.com.utils.FastBlur;
+import gl.com.utils.GaussUtil;
 
 /**
  * Created by mac on 15-11-3.
@@ -23,8 +24,9 @@ public class RGBtoFuzzy extends AbsProUtil {
     public Bitmap doPro(Bitmap src) {
         Bitmap bitmap;
         bitmap = RSblur(src);
-        //如果不先获取一张位图的话就会抛出异常，异常原因，穿进去的原位图不可变
+//        如果不先获取一张位图的话就会抛出异常，异常原因，穿进去的原位图不可变
 //        bitmap = FBblur(getBitmap(src));
+//        bitmap = gaussblur(src,4);
         return bitmap;
 //        return GaussBlur(src);
     }
@@ -46,7 +48,7 @@ public class RGBtoFuzzy extends AbsProUtil {
         Allocation allOut = Allocation.createFromBitmap(renderScript,bitmap);
 
         // 控制模糊程度
-        scriptIntrinsicBlur.setRadius(2.f);
+        scriptIntrinsicBlur.setRadius(6.f);
 
         scriptIntrinsicBlur.setInput(allIn);
         scriptIntrinsicBlur.forEach(allOut);
@@ -159,4 +161,76 @@ public class RGBtoFuzzy extends AbsProUtil {
         Log.e("tag","this is gauss blur used time"+(endTime-startTime)+"ms");
         return bitmap;
     }
+
+    /**
+     * 看起来是实现了高斯模糊，但是存在很大的问题
+     *  1.模糊度不高
+     *  2.耗时
+     * @param src
+     * @param r
+     * @return
+     */
+    public Bitmap gaussblur(Bitmap src,int r){
+        long startTime = System.currentTimeMillis();
+
+        double [] gauss = GaussUtil.getGauss(0.1, r);
+
+        int width = src.getWidth();
+        int height = src.getHeight();
+
+        Bitmap bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+        int[] pixels = new int[width*height];
+
+        //得到颜色数组
+        int[] colors= new int[(int) Math.pow(1+r*2,2)];
+        int pixR=0,pixB=0,pixG=0;
+        //边界不考虑(粗略)
+
+        int centers[] = new int[1+2*r];
+        src.getPixels(pixels,0,width,0,0,width,height);
+        boolean flag = true;
+        for (int i = r; i < width-r; i++) {
+            for (int j = r; j < height-r; j++) {
+                int x = j - r ;
+                //计算center
+                for (int k = 0; k < centers.length; k++) {
+                    centers[k] = width * (x+k);
+                }
+
+                int x2 = i - r ;
+                int h = 0;
+                for (int k = 0; k < 1+ 2 *r; k++) {
+                    for (int l = 0; l < 1 + 2 * r; l++) {
+                        colors[h] = pixels[centers[k]+x2+l];
+                        h++;
+                    }
+                }
+                //计算RGB分量
+                for (int k = 0; k < colors.length; k++) {
+                    pixR += Color.red(colors[k])*gauss[k];
+
+                    pixG += Color.green(colors[k])*gauss[k];
+                    pixB += Color.blue(colors[k])*gauss[k];
+
+                }
+
+                if (flag && i>200){
+                    Log.e("tag","这是原来的分量--->"+Color.red(colors[colors.length/2+1])+";"
+                            +Color.green(colors[colors.length/2+1])+";"
+                            +Color.blue(colors[colors.length/2+1]));
+                    Log.e("tag","这是计算后的"+pixR+";"+pixG+";"+pixB);
+                    flag=false;
+                }
+                pixels[width*j+i] = Color.argb(Color.alpha(colors[colors.length/2+1]),pixR,pixG,pixB);
+                pixR=pixG=pixB=0;
+            }
+        }
+
+        bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
+
+        long endTime = System.currentTimeMillis();
+        Log.e("tag","this is gauss used time "+(endTime-startTime)+"ms");
+        return bitmap;
+    }
+
 }
